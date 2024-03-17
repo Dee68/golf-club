@@ -1,0 +1,62 @@
+﻿@page
+@model GolfClub.Pages.Booking.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+
+
+<h3>Update Booking</h3>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Booking.Id" />
+            <div class="form-group">
+                <label asp-for="Booking.TeeTime" class="control-label"></label>
+                <input asp-for="Booking.TeeTime" class="form-control" />
+                <span asp-validation-for="Booking.TeeTime" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Booking.Player1GolferId" class="control-label"></label>
+                <select asp-for="Booking.Player1GolferId" class="form-control" asp-items="ViewBag.Player1GolferId"></select>
+                <span asp-validation-for="Booking.Player1GolferId" class="text-danger"></span>
+            </div>
+            
+            <div class="form-group">
+                <label asp-for="Booking.Player2GolferId" class="control-label"></label>
+                <select asp-for="Booking.Player2GolferId" class="form-control" asp-items="ViewBag.Player2GolferId"></select>
+                <span asp-validation-for="Booking.Player2GolferId" class="text-danger"></span>
+            </div>
+           
+            <div class="form-group">
+                <label asp-for="Booking.Player3GolferId" class="control-label"></label>
+                <select asp-for="Booking.Player3GolferId" class="form-control" asp-items="ViewBag.Player3GolferId"></select>
+                <span asp-validation-for="Booking.Player3GolferId" class="text-danger"></span>
+            </div>
+            
+            <div class="form-group">
+                <label asp-for="Booking.Player4GolferId" class="control-label"></label>
+                <select asp-for="Booking.Player4GolferId" class="form-control" asp-items="ViewBag.Player4GolferId"></select>
+                <span asp-validation-for="Booking.Player4GolferId" class="text-danger"></span>
+            </div>
+            
+            <div class="form-group">
+                <label asp-for="Booking.GolferId" class="control-label"></label>
+                <select asp-for="Booking.GolferId" class="form-control" asp-items="ViewBag.GolferId"></select>
+                <span asp-validation-for="Booking.GolferId" class="text-danger"></span>
+            </div>
+            <div class="form-group my-4">
+                <input type="submit" value="Save" class="btn btn-primary" />
+                <a asp-page="./Index" class="btn btn-secondary">Back to List</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

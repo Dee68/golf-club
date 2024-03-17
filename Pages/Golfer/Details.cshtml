@@ -1,0 +1,49 @@
+﻿@page
+@model GolfClub.Pages.Golfer.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Golfer</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Golfer.FirstName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Golfer.FirstName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Golfer.LastName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Golfer.LastName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Golfer.EmailAddress)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Golfer.EmailAddress)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Golfer.Handicap)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Golfer.Handicap)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Golfer.Gender)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Golfer.Gender)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.Golfer?.Id" class="btn btn-primary">Edit</a> 
+    <a asp-page="./Index" class="btn btn-danger">Back to List</a>
+</div>

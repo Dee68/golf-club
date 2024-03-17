@@ -1,0 +1,54 @@
+﻿@page
+@using GolfClub.Models
+@model GolfClub.Pages.Golfer.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h3 class="text-center"> Add Golfer</h3>
+<hr />
+
+<div class="row">
+    <div class="col-md-4"></div>
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Golfer.FirstName" class="control-label"></label>
+                <input asp-for="Golfer.FirstName" class="form-control" />
+                <span asp-validation-for="Golfer.FirstName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Golfer.LastName" class="control-label"></label>
+                <input asp-for="Golfer.LastName" class="form-control" />
+                <span asp-validation-for="Golfer.LastName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Golfer.EmailAddress" class="control-label"></label>
+                <input asp-for="Golfer.EmailAddress" class="form-control" />
+                <span asp-validation-for="Golfer.EmailAddress" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Golfer.Handicap" class="control-label"></label>
+                <input asp-for="Golfer.Handicap" class="form-control" />
+                <span asp-validation-for="Golfer.Handicap" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Golfer.Gender" class="control-label"></label>
+                <select asp-for="Golfer.Gender" asp-items="Html.GetEnumSelectList<Gender>()" class="form-control"></select>
+                <span asp-validation-for="Golfer.Gender" class="text-danger"></span>
+            </div>
+
+            <div class="form-group my-4">
+                <input type="submit" value="Create" class="btn btn-primary" />
+                <a asp-page="Index" class="btn btn-secondary">Back to List</a>
+            </div>
+        </form>
+    </div>
+    <div class="col-md-4"></div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

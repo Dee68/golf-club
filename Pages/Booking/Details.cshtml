@@ -1,0 +1,59 @@
+﻿@page
+@model GolfClub.Pages.Booking.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Booking</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Booking.TeeTime)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Booking.TeeTime)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Booking.Player1)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Booking.Player1.EmailAddress)  
+        </dd>
+       
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Booking.Player2)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Booking.Player2.EmailAddress)
+        </dd>
+        
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Booking.Player3)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Booking.Player3.EmailAddress)
+        </dd>
+        
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Booking.Player4)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Booking.Player4.EmailAddress)
+        </dd>
+        
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Booking.Golfer)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Booking.Golfer.EmailAddress)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.Booking?.Id" class="btn btn-success">Edit</a> 
+    <a asp-page="./Index" class="btn btn-secondary">Back to List</a>
+</div>
