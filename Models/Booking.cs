@@ -24,7 +24,8 @@
         public Golfer? Player4 { get; set; }
         
 
-        //Foreign key for associated golfer, one that does the booking(the one the booking is assigned to)
+        //Foreign key for associated golfer,
+        //one that does the booking(the one the booking is assigned to)
         public int GolferId { get; set; }
 
         public Golfer? Golfer { get; set; }
