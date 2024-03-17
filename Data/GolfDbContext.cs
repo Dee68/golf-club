@@ -3,11 +3,11 @@ using Microsoft.EntityFrameworkCore;
 
 namespace GolfClub.Data
 {
-    public class GolfDbContext: DbContext
+    public class GolfDbContext : DbContext
     {
         public GolfDbContext(DbContextOptions<GolfDbContext> options) : base(options)
         {
-            
+
         }
         public virtual DbSet<Booking> Bookings { get; set; }
         public virtual DbSet<Golfer> Golfers { get; set; }

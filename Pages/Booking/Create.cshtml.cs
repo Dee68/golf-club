@@ -22,18 +22,18 @@ namespace GolfClub.Pages.Booking
 
         public IActionResult OnGet()
         {
-        ViewData["GolferId"] = new SelectList(_context.Golfers, "Id", "EmailAddress");
-        ViewData["Player1GolferId"] = new SelectList(_context.Golfers, "Id", "EmailAddress");
-        ViewData["Player2GolferId"] = new SelectList(_context.Golfers, "Id", "EmailAddress");
-        ViewData["Player3GolferId"] = new SelectList(_context.Golfers, "Id", "EmailAddress");
-        ViewData["Player4GolferId"] = new SelectList(_context.Golfers, "Id", "EmailAddress");
+            ViewData["GolferId"] = new SelectList(_context.Golfers, "Id", "EmailAddress");
+            ViewData["Player1GolferId"] = new SelectList(_context.Golfers, "Id", "EmailAddress");
+            ViewData["Player2GolferId"] = new SelectList(_context.Golfers, "Id", "EmailAddress");
+            ViewData["Player3GolferId"] = new SelectList(_context.Golfers, "Id", "EmailAddress");
+            ViewData["Player4GolferId"] = new SelectList(_context.Golfers, "Id", "EmailAddress");
 
             return Page();
         }
 
         [BindProperty]
         public GolfClub.Models.Booking Booking { get; set; } = default!;
-        
+
 
         // To protect from overposting attacks, see https://aka.ms/RazorPagesCRUD
         public async Task<IActionResult> OnPostAsync()
@@ -53,9 +53,9 @@ namespace GolfClub.Pages.Booking
                 {
                     //ModelState.AddModelError(string.Empty, "The golfer has already booked a tee time on the same day.");
                     TempData["error"] = "The golfer has already booked a tee time on the same day.";
-                    
+
                     return RedirectToPage();
-                    
+
                 }
                 // Check if there are already four players booked at the same tee time
                 int bookedPlayersCount = await _context.Bookings
@@ -73,20 +73,20 @@ namespace GolfClub.Pages.Booking
                 {
                     //ModelState.AddModelError(string.Empty, "Tee time should be in 15 minutes intervals.");
                     TempData["error"] = "Tee time should be in 15 minutes intervals.";
-                    
+
                     return RedirectToPage();
                 }
                 _context.Bookings.Add(Booking);
                 await _context.SaveChangesAsync();
                 TempData["success"] = "Booking created successfully";
-                
+
 
                 return RedirectToPage();
             }
             catch (Exception ex)
             {
                 TempData["error"] = $"Something went wrong: {ex}";
-                
+
                 return Page();
             }
         }

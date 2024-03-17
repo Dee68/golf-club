@@ -11,9 +11,9 @@ namespace GolfClub.Models
     public class Golfer
     {
         public int Id { get; set; }
-        [Required,StringLength(15)]
+        [Required, StringLength(15)]
         public string? FirstName { get; set; }
-        [Required,StringLength(15)]
+        [Required, StringLength(15)]
         public string? LastName { get; set; }
         [Required, EmailAddress]
         public string? EmailAddress { get; set; }

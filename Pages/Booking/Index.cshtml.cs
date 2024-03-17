@@ -20,7 +20,7 @@ namespace GolfClub.Pages.Booking
             _context = context;
         }
 
-        public PaginatedList<GolfClub.Models.Booking> Bookings { get;set; } = default!;
+        public PaginatedList<GolfClub.Models.Booking> Bookings { get; set; } = default!;
 
         public async Task OnGetAsync(int? pageIndex)
         {
@@ -35,7 +35,7 @@ namespace GolfClub.Pages.Booking
                     .OrderByDescending(b => b.Id).AsQueryable();
                 int pageSize = 3;
                 Bookings = await PaginatedList<GolfClub.Models.Booking>.CreateAsync(query, pageIndex ?? 1, pageSize);
-                
+
             }
         }
     }

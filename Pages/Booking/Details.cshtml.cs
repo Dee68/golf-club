@@ -19,7 +19,7 @@ namespace GolfClub.Pages.Booking
             _context = context;
         }
 
-      public GolfClub.Models.Booking Booking { get; set; } = default!; 
+        public GolfClub.Models.Booking Booking { get; set; } = default!;
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
@@ -40,7 +40,7 @@ namespace GolfClub.Pages.Booking
             {
                 return NotFound();
             }
-            else 
+            else
             {
                 Booking = booking;
             }
