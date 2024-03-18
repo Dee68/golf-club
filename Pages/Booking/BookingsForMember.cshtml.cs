@@ -15,6 +15,7 @@ namespace GolfClub.Pages.Booking
         {
             _context = context;
         }
+
         [BindProperty]
         public int SelectedMemberId { get; set; }
 
