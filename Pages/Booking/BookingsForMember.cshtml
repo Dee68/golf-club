@@ -3,20 +3,6 @@
 @{
     ViewData["Title"] = "Bookings for Member";
 }
-@* <div class="row">
-    <div class="col-md-3"></div>
-    <div class="col-md-6">
-        <form method="post">
-        <div class="form-group">
-            <label asp-for="SelectedMemberId">Select Member:</label>
-            <select asp-for="SelectedMemberId" class="form-control" asp-items="Model.Members"></select>
-        </div>
-        <button type="submit" class="btn btn-primary my-4">Show Bookings</button>
-        <a asp-page="../Golfer/Index" class="btn btn-secondary">Back to List</a>
-    </form>
-    </div>
-    <div class="col-md-3"></div>
-</div> *@
 
 
 @if (Model.Bookings != null && Model.Bookings.Any())

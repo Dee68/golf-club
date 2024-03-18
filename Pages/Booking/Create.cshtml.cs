@@ -51,7 +51,6 @@ namespace GolfClub.Pages.Booking
                     b.TeeTime.Date == Booking.TeeTime.Date);
                 if (hasExistingBooking)
                 {
-                    //ModelState.AddModelError(string.Empty, "The golfer has already booked a tee time on the same day.");
                     TempData["error"] = "The golfer has already booked a tee time on the same day.";
 
                     return RedirectToPage();
